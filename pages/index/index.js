@@ -15,6 +15,12 @@ Page({
       url: '../logs/logs'
     })
   },
+  //调到图标页
+  clickMe: function(){
+    wx.navigateTo({
+      url: '../charts/chart'
+    })
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
