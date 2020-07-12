@@ -2,12 +2,13 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/charts/chart"
+    "pages/charts/chart",
+    "pages/devices/devices"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Demo",
+    "navigationBarTitleText": "蓝鸥净水",
     "navigationBarTextStyle":"black"
   },
   "style": "v2",

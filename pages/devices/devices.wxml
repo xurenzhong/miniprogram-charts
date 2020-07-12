@@ -1,0 +1,32 @@
+<scroll-view class="scrollview" scroll-y>
+	<image src="../../image/home_bg.jpg" class="background" mode="aspectFill"></image>
+	<view class="list" wx:for="{{list}}" wx:for-item="item" wx:for-index="index" bindtap="catchTap" data-index="{{index}}">
+		<view class="title">
+			<view></view>
+			<view class="titleContent">
+				<text>{{item.Bindname}}</text>
+				<text class="nameButton">图</text>
+			</view>
+			<view class="online">
+				<text class="markimage">图</text>
+				<view class="markline"></view>
+				<text class="marktext">在线</text>
+			</view>
+		</view>
+		<view class="content">
+			<text class="contentType" decode="{{true}}">型&nbsp;&nbsp;&nbsp;号:</text>
+			<text>{{item.dev_type}}</text>
+		</view>
+		<view class="content">
+			<text class="contentType" decode="{{true}}">位&nbsp;&nbsp;&nbsp;置:</text>
+			<text>{{item.UserWorkplace}}</text>
+		</view>
+		<view class="content">
+			<text class="contentType" decode="{{true}}">系列号:</text>
+			<text>{{item.chip_id}}</text>
+		</view>
+	</view>
+</scroll-view>
+<view class="scanview">
+	扫码绑定设备
+</view>

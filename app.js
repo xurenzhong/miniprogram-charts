@@ -1,3 +1,5 @@
+var http = require('./libs/httputils.js')
+
 //app.js
 App({
   onLaunch: function () {
@@ -9,7 +11,18 @@ App({
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId。并缓存
+        console.log("微信CODE=>"+res.code);
+        var params = {
+          Wxcode:res.code
+        }
+        // 发起请求
+        // http.postRequest(this.globalData.root, params, function(res) {
+        //   wx.setStorageSync('Session_key', res.Session_key)
+        //   wx.setStorageSync('Telnum', res.Telnum)
+        // }, function(err) {
+        //   wx.clearStorageSync()
+        // })
       }
     })
     // 获取用户信息
@@ -34,6 +47,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    root: "https://bluegull.cn"
   }
 })

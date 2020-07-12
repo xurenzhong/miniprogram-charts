@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    motto: 'Blue Gull',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -18,7 +18,7 @@ Page({
   //调到图标页
   clickMe: function(){
     wx.navigateTo({
-      url: '../charts/chart'
+      url: '../devices/devices'
     })
   },
   onLoad: function () {
