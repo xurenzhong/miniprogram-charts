@@ -1,0 +1,75 @@
+page {
+  height: 100%;
+  width: 100%;
+}
+
+.devicecontainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.remind {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+
+}
+
+.remindbg {
+  background-color: rgba(216, 218, 219, 1);
+  height: 54px;
+  width: 148px;
+  border-radius: 27px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.remindcontent {
+  background-color: rgba(226, 53, 73, 1);
+  border-radius: 19px;
+  height: 38px;
+  width: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remindtext {
+  color: white;
+  font-size: 18px;
+}
+
+.device {
+  display: flex;
+  flex-direction: row;
+}
+
+.deviceimagel {
+  height: 170px;
+  width: 85px;
+}
+.deviceimager {
+  height: 170px;
+  width: 180px;
+}
+
+.botremindcontent {
+  background-color: rgba(43, 124, 224, 1);
+  border-radius: 19px;
+  height: 38px;
+  width: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

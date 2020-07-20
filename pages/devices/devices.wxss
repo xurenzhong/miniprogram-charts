@@ -36,11 +36,10 @@
 }
 
 .nameButton {
-  color: red;
-  font-size: 14px;
   width: 16px;
   height: 16px;
   margin-left: 12px;
+  margin-top: 4px;
 }
 
 .buttonImage {
@@ -71,10 +70,8 @@
 }
 
 .markimage {
-  color: red;
-  font-size: 14px;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 
 .contentType {
@@ -95,7 +92,7 @@
 
 .scrollview {
   margin-top: 0px;
-  margin-bottom: 44px;
+  margin-bottom: 49px;
   margin-left: 0px;
   margin-right: 0px;
 }
@@ -111,6 +108,11 @@
   align-items: center;
   align-content: center;
   justify-content: center;
+}
+
+.scanimage {
+  height: 30px;
+  width: 120px;
 }
 
 .container {

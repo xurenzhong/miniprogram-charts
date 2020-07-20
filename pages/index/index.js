@@ -15,7 +15,7 @@ Page({
       url: '../logs/logs'
     })
   },
-  //调到图标页
+  //跳转设备列表页
   clickMe: function(){
     wx.navigateTo({
       url: '../devices/devices'

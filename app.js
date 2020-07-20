@@ -12,15 +12,17 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId。并缓存
-        console.log("微信CODE=>"+res.code);
+        console.log("微信CODE："+res.code);
         var params = {
           Wxcode:res.code
         }
         // 发起请求
-        // http.postRequest(this.globalData.root, params, function(res) {
+        // http.postRequest("http://106.14.221.12/login.do", params, function(res) {
         //   wx.setStorageSync('Session_key', res.Session_key)
         //   wx.setStorageSync('Telnum', res.Telnum)
+        //   console.log("注册成功")
         // }, function(err) {
+        //   console.log("注册失败："+err)
         //   wx.clearStorageSync()
         // })
       }
@@ -48,6 +50,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    root: "https://bluegull.cn"
+    // root: "http://bluegull.cn"
+    root: "http://106.14.221.12"
   }
 })

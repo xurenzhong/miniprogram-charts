@@ -1,14 +1,14 @@
+<image src="../../image/device_bg.png" class="background" mode="aspectFill"></image>
 <scroll-view class="scrollview" scroll-y>
-	<image src="../../image/home_bg.jpg" class="background" mode="aspectFill"></image>
-	<view class="list" wx:for="{{list}}" wx:for-item="item" wx:for-index="index" bindtap="catchTap" data-index="{{index}}">
+	<view class="list" wx:for="{{list}}" wx:key="index" bindtap="catchTap" data-index="{{index}}">
 		<view class="title">
 			<view></view>
 			<view class="titleContent">
 				<text>{{item.Bindname}}</text>
-				<text class="nameButton">图</text>
+				<image class="nameButton" src="../../image/edit.png" bindtap="rename"></image>
 			</view>
 			<view class="online">
-				<text class="markimage">图</text>
+				<image class="markimage" src="../../image/jiebang.png"></image>
 				<view class="markline"></view>
 				<text class="marktext">在线</text>
 			</view>
@@ -27,6 +27,6 @@
 		</view>
 	</view>
 </scroll-view>
-<view class="scanview">
-	扫码绑定设备
+<view class="scanview" bindtap="scanDevice">
+	<image class="scanimage" src="../../image/scan_qrcode.png"></image>
 </view>

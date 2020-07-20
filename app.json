@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/charts/chart",
-    "pages/devices/devices"
+    "pages/devices/devices",
+    "pages/deviceAdd/deviceAdd",
+    "pages/deviceState/deviceState"
   ],
   "window":{
     "backgroundTextStyle":"light",

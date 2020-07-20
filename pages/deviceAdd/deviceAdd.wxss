@@ -1,0 +1,99 @@
+
+page {
+  height: 100%;
+}
+
+.bgcontent {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+}
+
+.titlecontent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.headtitle {
+  font-size: 14px;
+  color: rgba(109, 109, 109, 1);
+}
+
+.titletext {
+  font-size: 23px;
+  color: rgba(57, 57, 57, 1);
+}
+
+.input {
+  height: 36px;
+  width: 80%;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: rgba(218, 218, 218, 1);
+  border:1px solid rgba(218, 218, 218, 1);
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.inputcontent {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.inputtitle {
+  font-size: 15px;
+  color: rgba(38, 38, 38, 1);
+  margin-top: 18px;
+}
+
+.botcontent {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 30%;
+}
+
+.bindcontent {
+  background-color: rgba(193, 193, 193, 1);
+  border-radius: 17px;
+  width: 80%;
+  height: 34px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.removebindcontent {
+  width: 80%;
+  height: 34px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.bind {
+  color: white;
+  font-size: 14px;
+}
+
+.removebind {
+  color: rgba(89, 89, 89, 1);
+  font-size: 14px;
+}

@@ -1,0 +1,36 @@
+<page>
+	<view class="bgcontent">
+		<view class="title">
+			<text class="titletext">蓝鸥净水设备</text>
+			<view class="titlecontent">
+				<text class="headtitle">型号：</text>
+				<text class="headtitle">LOSRO-250-S</text>
+			</view>
+			<view class="titlecontent">
+				<text class="headtitle">系列号：</text>
+				<text class="headtitle">00999JKJJKHKK88</text>
+			</view>
+			<text class="inputtitle">关联信息填写</text>
+			<view class="input">
+				<input class="inputcontent" placeholder="姓名"></input>
+			</view>
+			<view class="input">
+				<input class="inputcontent" placeholder="手机号码"></input>
+			</view>
+			<view class="input">
+				<input class="inputcontent" placeholder="工作岗位"></input>
+			</view>
+			<view class="input">
+				<input class="inputcontent" placeholder="工作单位"></input>
+			</view>
+		</view>
+		<view class="botcontent">
+			<view class="bindcontent">
+				<text class="bind">绑定</text>
+			</view>
+			<view class="removebindcontent">
+				<text class="removebind">取消绑定</text>
+			</view>
+		</view>
+	</view>
+</page>
