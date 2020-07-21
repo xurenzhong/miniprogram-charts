@@ -1,0 +1,34 @@
+<!-- 简单复制黏贴了，省事 -->
+
+<page>
+	<view class="container">
+		<view>
+			<view class="first-row">
+				<view class="image-parent1">
+					<image class="image" src="../../image/hexagon_blue.png" bindtap="click_1"></image>
+					<text class="child" bindtap="click_1">TDS</text>
+				</view>
+				<view class="image-parent2">
+					<image class="image" src="../../image/hexagon_blue.png" bindtap="click_2"></image>
+					<text class="child" bindtap="click_2">TOC</text>
+				</view>
+			</view>
+			<view class="second-row">
+				<view class="image-parent1">
+					<image class="image" src="../../image/hexagon_blue.png" bindtap="click_3"></image>
+					<text class="child" bindtap="click_3">浊度</text>
+				</view>
+			</view>
+			<view class="third-row">
+				<view class="image-parent1">
+					<image class="image" src="../../image/hexagon_blue.png" bindtap="click_4"></image>
+					<text class="child" bindtap="click_4">COD</text>
+				</view>
+				<view class="image-parent2">
+					<image class="image" src="../../image/hexagon_blue.png" bindtap="click_5"></image>
+					<text class="child" bindtap="click_5">余氯</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</page>

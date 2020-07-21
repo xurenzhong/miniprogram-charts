@@ -1,0 +1,78 @@
+page {
+  height: 100%;
+}
+
+.bg {
+  justify-content: center;
+}
+
+.first-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: -48px;
+}
+
+.third-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: -48px;
+}
+
+.image-parent1 {
+  height: 102px; 
+  position: relative;
+}
+
+.image-parent2 {
+  height: 102px; 
+  position: relative;
+  margin-left: 75px;
+}
+
+.image {
+  width: 122px;
+  height: 102px;
+}
+
+.child {
+  width: 100px;
+  height: 24px;  
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  color: white;
+} 
+.hex {
+  overflow: hidden;
+  display: block;
+  width: 100px;
+  height: 116px;
+  transform: rotate(-60deg) skewY(30deg);
+}
+
+.hexIn {
+  background-color: #ccc;
+  display: block;
+  width: 100px;
+  height: 116px;
+  line-height: 116px;
+  text-align: center;
+  transform: skewY(-30deg) rotate(60deg);
+}
+
+

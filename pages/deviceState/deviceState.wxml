@@ -18,7 +18,7 @@
 		</view>
 		<view class="remind">
 			<view class="remindbg">
-				<view class="botremindcontent">
+				<view class="botremindcontent" bindtap="waterIndicator">
 					<text class="remindtext">水质指标</text>
 				</view>
 			</view>

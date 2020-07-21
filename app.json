@@ -5,7 +5,8 @@
     "pages/charts/chart",
     "pages/devices/devices",
     "pages/deviceAdd/deviceAdd",
-    "pages/deviceState/deviceState"
+    "pages/deviceState/deviceState",
+    "pages/waterIndicators/waterIndicators"
   ],
   "window":{
     "backgroundTextStyle":"light",
