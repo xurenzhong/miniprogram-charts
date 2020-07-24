@@ -122,3 +122,103 @@
   flex-direction: column;
   justify-content: flex-start;
 }
+
+/* 弹窗样式设置 */
+.toast-box {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.toastbg {
+  opacity: 0.2;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.showToast {
+  position: absolute;
+  opacity: 1;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 40%;
+  margin-right: 10%;
+}
+
+.toast-title {
+  display: flex;
+  background-color: white;
+  color: black;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast-main {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: white;
+  text-align: center;
+}
+
+.toast-input {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid #ddd;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.input {
+  text-align: left;
+}
+
+.toast-button {
+  display: flex;
+  flex-direction: row;
+  padding-right: 0rpx;
+  background-color: white;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+}
+
+.button1 {
+  color: black;
+  background-color: white;
+}
+
+.button2 {
+  color: rgba(107, 195, 67, 1);
+  background-color: white;
+}
+
+.button1_button {
+  border-bottom-left-radius: 16rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.button2_button {
+  border-bottom-right-radius: 16rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.picker {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}

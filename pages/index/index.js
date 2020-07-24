@@ -21,6 +21,13 @@ Page({
       url: '../devices/devices'
     })
   },
+  //手机号码绑定
+  bindPhone: function() {
+    wx.navigateTo({
+      url: '../bindPhone/bindPhone',
+    })
+  },
+
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

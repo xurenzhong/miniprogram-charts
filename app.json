@@ -6,7 +6,8 @@
     "pages/devices/devices",
     "pages/deviceAdd/deviceAdd",
     "pages/deviceState/deviceState",
-    "pages/waterIndicators/waterIndicators"
+    "pages/waterIndicators/waterIndicators",
+    "pages/bindPhone/bindPhone"
   ],
   "window":{
     "backgroundTextStyle":"light",

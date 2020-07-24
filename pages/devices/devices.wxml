@@ -8,7 +8,7 @@
 				<image class="nameButton" src="../../image/edit.png" bindtap="rename"></image>
 			</view>
 			<view class="online">
-				<image class="markimage" src="../../image/jiebang.png"></image>
+				<image class="markimage" src="../../image/jiebang.png" bindtap="removeDevice"></image>
 				<view class="markline"></view>
 				<text class="marktext">在线</text>
 			</view>
@@ -29,4 +29,27 @@
 </scroll-view>
 <view class="scanview" bindtap="scanDevice">
 	<image class="scanimage" src="../../image/scan_qrcode.png"></image>
+</view>
+
+<!-- 改名弹窗 -->
+<view class='toast-box' hidden='{{!showRenameToast}}'>
+	<view class='toastbg'></view>
+	<view class='showToast'>
+		<view class='toast-title'>
+			<text>设备名称</text>
+		</view>
+		<view class='toast-main'>
+			<view class='toast-input'>
+				<input placeholder='{{renameText}}' bindinput='setValue' data-name='newName' class="input"></input>
+			</view>
+		</view>
+		<view class='toast-button'>
+			<view class='button1_button'>
+				<button class="button1" catchtap='cancel'>取消</button>
+			</view>
+			<view class='button2_button'>
+				<button class="button2" catchtap='confirm'>确定</button>
+			</view>
+		</view>
+	</view>
 </view>

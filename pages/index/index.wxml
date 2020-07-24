@@ -10,6 +10,7 @@
 	</view>
 	<view class="usermotto">
 		<!-- <text class="user-motto">{{motto}}</text> -->
-		<button bindtap="clickMe">点击我查看详情</button>
+		<button bindtap="clickMe">设备列表</button>
+		<button bindtap="bindPhone">账号绑定</button>
 	</view>
 </view>

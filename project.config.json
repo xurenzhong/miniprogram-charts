@@ -22,11 +22,12 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": false
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.1",
-	"appid": "wxd77d6274717eb3bc",
+	"appid": "wxe6ec928ad0b6e661",
 	"projectname": "miniprogram-charts",
 	"debugOptions": {
 		"hidedInDevtools": []
