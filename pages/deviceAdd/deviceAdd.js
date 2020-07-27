@@ -10,7 +10,8 @@ Page({
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
     this.setData({
-      chip_id: options.chip_id, username: wx.getStorageSync('username')
+      chip_id: options.chip_id,
+      username: wx.getStorageSync('username')
     })
     console.log("Current_chipId:" + options.chip_id)
   },
@@ -23,12 +24,31 @@ Page({
       username: that.data.username,
       telnum: that.data.telnum,
       user: that.data.user,
-      user_work_place:that.data.user_work_place,
+      user_work_place: that.data.user_work_place,
       user_job: that.data.user_job,
-      device_location: that.data.device_location
+      device_location: that.data.device_location,
+      device_name: that.data.device_name
     }
     http.getRequest(app.globalData.root + "/programs/bindServlet", params, function (res) {
       console.log(res)
+      if (res === "0000") {
+        wx.showToast({
+          title: '绑定设备成功',
+        })
+        let pages = getCurrentPages();
+        let prevPage = pages[pages.length - 2];
+        prevPage.setData({
+          needRefresh: true,
+        })
+        wx.navigateBack({
+          delta: 1,
+        })
+      } else {
+        wx.showToast({
+          title: '绑定设备失败',
+          icon: 'none'
+        })
+      }
     }, function (err) {
       console.log(err)
     })
@@ -41,7 +61,7 @@ Page({
         title: '缺少信息',
         icon: "none"
       })
-    }else{
+    } else {
       this.addDevice()
     }
   },
@@ -78,10 +98,12 @@ Page({
     // 工作岗位
     user_job: "",
     // device_location
-    device_location: "",
+    device_location: "未知位置",
     // 手机号
     telnum: "",
     // 手机号
-    username: ""
+    username: "",
+    // 设备名称默认
+    device_name: "蓝鸥净水设备"
   }
 })

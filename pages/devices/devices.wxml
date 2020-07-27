@@ -4,22 +4,22 @@
 		<view class="title">
 			<view></view>
 			<view class="titleContent">
-				<text>{{item.Bindname}}</text>
+				<text>{{item.device_name}}</text>
 				<image class="nameButton" src="../../image/edit.png" bindtap="rename"></image>
 			</view>
-			<view class="online">
+			<view class="linebg">
 				<image class="markimage" src="../../image/jiebang.png" bindtap="removeDevice"></image>
-				<view class="markline"></view>
-				<text class="marktext">在线</text>
+				<view class="{{item.online_status}}"></view>
+				<text class="marktext">{{item.online_status === "offline" ? "离线" : "在线"}}</text>
 			</view>
 		</view>
 		<view class="content">
 			<text class="contentType" decode="{{true}}">型&nbsp;&nbsp;&nbsp;号:</text>
-			<text>{{item.dev_type}}</text>
+			<text>{{item.device_model_number}}</text>
 		</view>
 		<view class="content">
 			<text class="contentType" decode="{{true}}">位&nbsp;&nbsp;&nbsp;置:</text>
-			<text>{{item.UserWorkplace}}</text>
+			<text>{{item.device_location}}</text>
 		</view>
 		<view class="content">
 			<text class="contentType" decode="{{true}}">系列号:</text>
