@@ -1,12 +1,31 @@
-import http from '../../libs/httputils.js'
+var http = require('../../libs/httputils.js')
+
+const app = getApp()
 
 Page({
   onShareAppMessage: res => {
     return {}
   },
-  onLoad: function () {
-
+  onLoad: function (options) {
+    console.log(options)
+    if (options.username) {
+      this.setData({username:options.username})
+      this.initData()
+    }
   },
+
+  // 获取设置列表
+  initData: function () {
+    var params = {
+      username: this.data.username
+    }
+    http.getRequest(app.globalData.root + "/programs/userDeviceListServlet" , params, function (res) {
+      console.log(res)
+    }, function (err) {
+      console.log(err)
+    })
+  },
+
   // 操作在这个位置归结
   catchTap: function (e) {
     let that = this
@@ -21,6 +40,7 @@ Page({
       that.data.handleType = 0;
     } else if (that.data.handleType == 2) {
       console.log("移除" + e.currentTarget.dataset.index + "设备")
+      var device = this.data.list[e.currentTarget.dataset.index]
       // 调用移除之后，重置状态
       wx.showModal({
         title: '提示',
@@ -28,6 +48,7 @@ Page({
         success(res) {
           if (res.confirm) {
             console.log('用户点击确定')
+            that.removeDevice(device.chip_id)
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
@@ -39,7 +60,7 @@ Page({
       var chip_id = that.data.list[index].chip_id
       console.log("点击了第" + index + "个设备：" + chip_id)
       wx.navigateTo({
-        url: '../../pages/deviceState/deviceState?chip_id' + chip_id,
+        url: '../../pages/deviceState/deviceState?chip_id=' + chip_id,
       })
     }
   },
@@ -92,10 +113,6 @@ Page({
 
   // 扫描添加设备功能
   scanDevice: function () {
-    wx.navigateTo({
-      url: '../deviceAdd/deviceAdd',
-    })
-    return
     console.log("开始扫描设备");
     wx.scanCode({
       complete: (res) => {
@@ -170,6 +187,8 @@ Page({
     // 当前设备名称
     renameText: "",
     // 新名称
-    newName: ""
+    newName: "",
+    // 用户手机
+    username: ""
   }
 })

@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
     "pages/charts/chart",
@@ -7,13 +7,16 @@
     "pages/deviceAdd/deviceAdd",
     "pages/deviceState/deviceState",
     "pages/waterIndicators/waterIndicators",
-    "pages/bindPhone/bindPhone"
+    "pages/bindPhone/bindPhone",
+    "pages/deviceLifes/deviceLifes",
+    "pages/waterWarning/waterWarning"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "subpackages": [],
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "蓝鸥净水",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

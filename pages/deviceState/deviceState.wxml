@@ -2,7 +2,7 @@
 	<view class="devicecontainer">
 		<view class="remind">
 			<view class="remindbg">
-				<view class="remindcontent">
+				<view class="remindcontent" bindtap="waterWarning">
 					<text class="remindtext">保养提醒</text>
 				</view>
 			</view>
@@ -23,7 +23,7 @@
 				</view>
 			</view>
 			<view class="remindbg">
-				<view class="botremindcontent">
+				<view class="botremindcontent" bindtap="deviceLifes">
 					<text class="remindtext">滤料滤芯寿命</text>
 				</view>
 			</view>

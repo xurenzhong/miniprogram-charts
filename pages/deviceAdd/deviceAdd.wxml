@@ -8,27 +8,27 @@
 			</view>
 			<view class="titlecontent">
 				<text class="headtitle">系列号：</text>
-				<text class="headtitle">00999JKJJKHKK88</text>
+				<text class="headtitle">{{chip_id}}</text>
 			</view>
 			<text class="inputtitle">关联信息填写</text>
 			<view class="input">
-				<input class="inputcontent" placeholder="姓名"></input>
+				<input class="inputcontent" placeholder="姓名" bindinput="setNameValue"></input>
 			</view>
 			<view class="input">
-				<input class="inputcontent" placeholder="手机号码"></input>
+				<input class="inputcontent" placeholder="手机号码" bindinput="setTelValue"></input>
 			</view>
 			<view class="input">
-				<input class="inputcontent" placeholder="工作岗位"></input>
+				<input class="inputcontent" placeholder="工作岗位" bindinput="setJobValue"></input>
 			</view>
 			<view class="input">
-				<input class="inputcontent" placeholder="工作单位"></input>
+				<input class="inputcontent" placeholder="工作单位" bindinput="setWorkValue"></input>
 			</view>
 		</view>
 		<view class="botcontent">
-			<view class="bindcontent">
+			<view class="bindcontent" bindtap="bindDevice">
 				<text class="bind">绑定</text>
 			</view>
-			<view class="removebindcontent">
+			<view class="removebindcontent" bindtap="cancelBind">
 				<text class="removebind">取消绑定</text>
 			</view>
 		</view>

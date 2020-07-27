@@ -12,7 +12,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '水质指标',
+      title: '滤料滤芯寿命',
     })
   },
 
@@ -63,25 +63,5 @@ Page({
    */
   onShareAppMessage: function () {
     
-  },
-
-  /// 点击事件集合
-  click_1: function () {
-    console.log("点击了1")
-  },
-
-  click_2: function () {
-    console.log("点击了2")
-  },
-
-  click_3: function () {
-    console.log("点击了3")
-  },
-  click_4: function () {
-    console.log("点击了4")
-  }, 
-  click_5: function () {
-    console.log("点击了5")
-  },
-
+  }
 })

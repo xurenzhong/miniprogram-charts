@@ -1,12 +1,13 @@
+
+var res = wx.getSystemInfoSync()
 /**
  * 请求头
  */
 var header = {
   'content-type': 'application/json',
-  'Authorization': "Bearer " + wx.getStorageSync("token"),
-  'os': 'android',
-  'version': '1.0.0',
-  'device_token': 'ebc9f523e570ef14',
+  'Authorization': "Blue Gull" + wx.getStorageSync("token"),
+  'os': res.model,
+  'version': '1.0.0'
 }
 
 /**

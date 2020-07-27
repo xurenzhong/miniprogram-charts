@@ -62,10 +62,22 @@ Page({
   onShareAppMessage: function () {
     
   },
-
+  // 保养提醒
+  waterWarning: function () {
+    wx.navigateTo({
+      url: '../waterWarning/waterWarning',
+    })
+  },
+  // 水质指标
   waterIndicator: function () {
     wx.navigateTo({
       url: '../waterIndicators/waterIndicators',
+    })
+  },
+  // 滤芯滤料
+  deviceLifes: function () {
+    wx.navigateTo({
+      url: '../deviceLifes/deviceLifes',
     })
   }
 })

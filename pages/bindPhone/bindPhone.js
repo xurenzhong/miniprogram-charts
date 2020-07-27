@@ -1,5 +1,9 @@
-Page({
+var http = require('../../libs/httputils.js')
 
+//获取应用实例
+const app = getApp()
+
+Page({
   /**
    * 页面的初始数据
    */
@@ -13,6 +17,8 @@ Page({
     zhengLove: true,
     huoLove: '',
     getText2: '获取验证码',
+    openid: '',
+    realCode: '',
   },
 
   /**
@@ -22,60 +28,67 @@ Page({
     wx.setNavigationBarTitle({
       title: '关联账号',
     })
+    console.log(options)
+    if (options.openid) {
+      console.log("微信openid：" + options.openid)
+      this.data.openid = options.openid
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+
   },
   // 手机验证
   lovePhone: function (e) {
     let phone = e.detail.value;
-    this.setData({ hongyzphone: phone })
+    this.setData({
+      hongyzphone: phone
+    })
     if (!(/^1[34578]\d{9}$/.test(phone))) {
       this.setData({
         lovePhone: false
@@ -91,7 +104,7 @@ Page({
     } else {
       this.setData({
         lovePhone: true
- 
+
       })
     }
   },
@@ -104,23 +117,21 @@ Page({
       yanLove: yanLove,
       zhengLove: false,
     })
-    if (yanLove.length >= 4) {
-      if (yanLove == huoLove) {
-        that.setData({
-          zhengLove: true,
-        })
-      } else {
-        that.setData({
-          zhengLove: false,
-        })
-        wx.showModal({
-          content: '输入验证码有误',
-          showCancel: false,
-          success: function (res) { }
-        })
-      }
+    if (yanLove.length == 6) {
+      // if (yanLove == huoLove) {
+      that.setData({
+        zhengLove: true,
+      })
+      // } else {
+
+      // wx.showModal({
+      //   content: '输入验证码有误',
+      //   showCancel: false,
+      //   success: function (res) { }
+      // })
+      // }
     }
- 
+
   },
   // 验证码按钮
   yanLoveBtn: function () {
@@ -135,8 +146,8 @@ Page({
     if (!lovePhone) {
       wx.showToast({
         title: '手机号有误',
-        icon: 'success',
-        duration: 1000
+        icon: 'none',
+        duration: 1500
       })
     } else {
       if (loveChange) {
@@ -157,20 +168,56 @@ Page({
           }
           n--;
         }, 1000);
- 
+
         //获取验证码接口写在这里
-        wx.showToast({
-          title: '未处理绑定逻辑',
+        var params = {
+          telnum: phone
+        }
+        http.getRequest(app.globalData.root + "/programs/verificationCodeServlet", params, function (res) {
+          if (res) {
+            console.log(res)
+            that.setData({realCode: String(res)});
+          }
+        }, function (err) {
+          console.log(err)
         })
-        
       }
     }
   },
   //form表单提交
-  formSubmit(e){
-    let val = e.detail.value 
+  formSubmit(e) {
+    let that = this
+    let val = e.detail.value
     console.log('val', val)
     var phone = val.phone //电话
     var phoneCode = val.phoneCode //验证码
+    var realCode = that.data.realCode
+    var openid = that.data.openid
+    // 比对后台和输入的验证
+    if (String(phoneCode) !==  String(realCode)) {
+      wx.showToast({
+        title: '验证码错误',
+        icon: 'none'
+      })
+    } else {
+      var params = {
+        username: phone,
+        password: phone,
+        code: phoneCode,
+        openid: openid
+      }
+      // 开始绑定手机号
+      http.getRequest(app.globalData.root + "/programs/registerServlet", params, function (res) {
+        console.log(res)
+        if (res === '0000') {
+          wx.setStorageSync('username', that.data.hongyzphone)
+          wx.showToast({
+            title: '绑定手机成功',
+          })
+        }
+      }, function (err) {
+        console.log(err)
+      })
+    }
   }
 })
