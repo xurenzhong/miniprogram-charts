@@ -96,6 +96,14 @@ Page({
       url: '../waterWarning/waterWarning',
     })
   },
+
+  // 故障提醒
+  waterError: function () {
+    wx.navigateTo({
+      url: '../waterError/waterError',
+    })
+  },
+
   // 水质指标
   waterIndicator: function () {
     wx.navigateTo({

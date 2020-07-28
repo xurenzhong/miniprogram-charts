@@ -95,6 +95,7 @@ Page({
               } else {
                 wx.showToast({
                   title: '移除设备失败',
+                  icon: 'none'
                 })
               }
             }, function (err) {

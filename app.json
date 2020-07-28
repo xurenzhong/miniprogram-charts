@@ -9,7 +9,8 @@
     "pages/waterIndicators/waterIndicators",
     "pages/bindPhone/bindPhone",
     "pages/deviceLifes/deviceLifes",
-    "pages/waterWarning/waterWarning"
+    "pages/waterWarning/waterWarning",
+    "pages/waterError/waterError"
   ],
   "subpackages": [],
   "window": {

@@ -61,5 +61,22 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+
+  click_0: function() {
+    wx.showModal({
+      title:'滤芯滤料更换提醒',
+      content: '石英砂更换需要专业人员规范操作，请尽早联系设备生产商解决！',
+      confirmText: '返回',
+      confirmColor: '#1F65C9',
+      showCancel: false,
+      success: function(res){
+        if (res.cancel) {
+          
+        }else{
+          wx.navigateBack()
+        }
+      }
+    })
   }
 })

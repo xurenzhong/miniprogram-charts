@@ -55,7 +55,13 @@ page {
   flex-direction: row;
 }
 
+.water_state {
+  width: 15.5px;
+  height: 170px;
+}
+
 .deviceimagel {
+  margin: 15px;
   height: 170px;
   width: 85px;
 }
