@@ -19,10 +19,10 @@
 		</view>
 		<view class="content">
 			<text class="contentType" decode="{{true}}">位&nbsp;&nbsp;&nbsp;置:</text>
-			<text>{{item.device_location}}</text>
+			<text>{{item.user_work_place}}</text>
 		</view>
 		<view class="content">
-			<text class="contentType" decode="{{true}}">系列号:</text>
+			<text class="contentType" decode="{{true}}">序列号:</text>
 			<text>{{item.chip_id}}</text>
 		</view>
 	</view>

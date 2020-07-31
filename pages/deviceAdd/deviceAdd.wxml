@@ -7,7 +7,7 @@
 				<text class="headtitle">LOSRO-250-S</text>
 			</view>
 			<view class="titlecontent">
-				<text class="headtitle">系列号：</text>
+				<text class="headtitle">序列号：</text>
 				<text class="headtitle">{{chip_id}}</text>
 			</view>
 			<text class="inputtitle">关联信息填写</text>

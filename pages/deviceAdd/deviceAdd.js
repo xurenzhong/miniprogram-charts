@@ -82,11 +82,11 @@ Page({
   },
 
   setJobValue: function (e) {
-    this.data.user_work_place = e.detail.value
+    this.data.user_job = e.detail.value
   },
 
   setWorkValue: function (e) {
-    this.data.user_job = e.detail.value
+    this.data.user_work_place = e.detail.value
   },
 
   data: {
