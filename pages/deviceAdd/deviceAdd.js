@@ -44,9 +44,14 @@ Page({
           delta: 1,
         })
       } else {
+        var text = "绑定设备失败！"
+        if (res === 'subsistent') {
+          text = "设备已在列表中！"
+        }
         wx.showToast({
-          title: '绑定设备失败',
-          icon: 'none'
+          title: text,
+          icon: 'none',
+          duration: 3000
         })
       }
     }, function (err) {

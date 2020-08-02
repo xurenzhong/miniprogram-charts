@@ -9,7 +9,8 @@ Page({
     motto: 'Blue Gull',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    showPermissions: true
   },
 
   onLoad: function () {
@@ -40,15 +41,6 @@ Page({
         }
       })
     }
-  },
-
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
   },
 
   // 检查缓存
@@ -83,13 +75,13 @@ Page({
     var username = wx.getStorageSync('username')
     var openid = wx.getStorageSync('openid')
     if (username) {
-      console.log("跳转设备列表："+ username)
-      wx.navigateTo({
+      console.log("跳转设备列表：" + username)
+      wx.redirectTo({
         url: '../devices/devices?username=' + username,
       })
     } else {
-      console.log("微信openid："+ openid)
-      wx.navigateTo({
+      console.log("微信openid：" + openid)
+      wx.redirectTo({
         url: '../bindPhone/bindPhone?openid=' + openid,
       })
     }
@@ -101,26 +93,40 @@ Page({
     console.log("检查配置，是否已经授权")
     wx.getSetting({
       success: res => {
+        console.log("检查授权成功：" + res.authSetting)
+
+        // 授权完成，进行登录
+        that.wxLogin()
+
+        // 设置头像，非必要
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              console.log("微信授权成功")
               // 可以将 res 发送给后台解码出 unionId
               app.globalData.userInfo = res.userInfo
-              // 授权完成，进行登录
-              that.wxLogin()
+              that.setData({
+                userInfo: res.userInfo,
+                hasUserInfo: true,
+                showPermissions: false
+              })
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
-              if (that.userInfoReadyCallback) {
-                that.userInfoReadyCallback(res)
-              }
+              // if (that.userInfoReadyCallback) {
+              //   that.userInfoReadyCallback(res)
+              // }
             }
           })
         }
       },
       fail: res => {
-
+        console.log("授权失败:" + res)
+        wx.showToast({
+          title: '获取微信登录失败！',
+          icon: 'none'
+        })
       }
     })
   },
@@ -141,8 +147,9 @@ Page({
           if (res.openid) {
             wx.setStorageSync('openid', res.openid)
           }
-          if (res.username) {
+          if (res.username) { // 手机号存在直接去设备界面
             wx.setStorageSync('username', res.username)
+            that.checkUsername()
           } else { // 当手机号不存在的时候进行绑定
             that.checkUsername()
           }

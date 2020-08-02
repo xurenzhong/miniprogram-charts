@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    names: ['TDS', 'TOC', '浊度', 'COD', '余氯'],
   },
 
   /**
@@ -68,20 +68,31 @@ Page({
   /// 点击事件集合
   click_1: function () {
     console.log("点击了1")
+    this.pushToDetail(0)
   },
 
   click_2: function () {
     console.log("点击了2")
+    this.pushToDetail(1)
   },
 
   click_3: function () {
     console.log("点击了3")
+    this.pushToDetail(2)
   },
   click_4: function () {
     console.log("点击了4")
+    this.pushToDetail(3)
   }, 
   click_5: function () {
     console.log("点击了5")
+    this.pushToDetail(4)
   },
+
+  pushToDetail: function(index) {
+    wx.navigateTo({
+      url: '../../pages/charts/chart?title=' + this.data.names[index],
+    })
+  }
 
 })

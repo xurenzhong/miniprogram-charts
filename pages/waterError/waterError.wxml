@@ -4,56 +4,56 @@
 		<view>
 			<view class="zero-row">
 				<view class="image-parent1">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_0"></image>
+					<image class="image" src='{{image_array[0]}}' bindtap="click_0"></image>
 					<text class="child" bindtap="click_0">进水压力</text>
 				</view>
 			</view>
 			<view class="first-row">
 				<view class="image-parent1">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_1"></image>
+					<image class="image" src='{{image_array[1]}}' bindtap="click_1"></image>
 					<text class="child" bindtap="click_1">取水压力</text>
 				</view>
 				<view class="image-parent2">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_2"></image>
+					<image class="image" src='{{image_array[2]}}' bindtap="click_2"></image>
 					<text class="child" bindtap="click_2">进水流量传感器</text>
 				</view>
 			</view>
 			<view class="second-row">
 				<view class="image-parent1">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_3"></image>
+					<image class="image" src='{{image_array[3]}}' bindtap="click_3"></image>
 					<text class="child" bindtap="click_3">水质模块</text>
 				</view>
 			</view>
 			<view class="third-row">
 				<view class="image-parent1">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_4"></image>
+					<image class="image" src='{{image_array[4]}}' bindtap="click_4"></image>
 					<text class="child" bindtap="click_4">纯水流量传感器故障</text>
 				</view>
 				<view class="image-parent2">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_5"></image>
+					<image class="image" src='{{image_array[5]}}' bindtap="click_5"></image>
 					<text class="child" bindtap="click_5">液位传感器</text>
 				</view>
 			</view>
 			<view class="fouth-row">
 				<view class="image-parent1">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_6"></image>
+					<image class="image" src='{{image_array[6]}}' bindtap="click_6"></image>
 					<text class="child" bindtap="click_6">TDS模块</text>
 				</view>
 			</view>
 			<view class="third-row">
 				<view class="image-parent1">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_4"></image>
-					<text class="child" bindtap="click_4">UV模块</text>
+					<image class="image" src='{{image_array[7]}}' bindtap="click_7"></image>
+					<text class="child" bindtap="click_7">UV模块</text>
 				</view>
 				<view class="image-parent2">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_5"></image>
-					<text class="child" bindtap="click_5">膜前压力</text>
+					<image class="image" src='{{image_array[8]}}' bindtap="click_8"></image>
+					<text class="child" bindtap="click_8">膜前压力</text>
 				</view>
 			</view>
 			<view class="fouth-row">
 				<view class="image-parent1">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_6"></image>
-					<text class="child" bindtap="click_6">滤芯滤料</text>
+					<image class="image" src='{{image_array[9]}}' bindtap="click_9"></image>
+					<text class="child" bindtap="click_9">滤芯滤料</text>
 				</view>
 			</view>
 		</view>

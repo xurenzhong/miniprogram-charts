@@ -2,10 +2,10 @@
 	<view class="bgcontent">
 		<view class="title">
 			<text class="titletext">蓝鸥净水设备</text>
-			<view class="titlecontent">
+			<!-- <view class="titlecontent">
 				<text class="headtitle">型号：</text>
 				<text class="headtitle">LOSRO-250-S</text>
-			</view>
+			</view> -->
 			<view class="titlecontent">
 				<text class="headtitle">序列号：</text>
 				<text class="headtitle">{{chip_id}}</text>

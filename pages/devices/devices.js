@@ -10,6 +10,9 @@ Page({
 
   onLoad: function (options) {
     console.log(options)
+    wx.hideHomeButton({
+      success: (res) => {},
+    })
     if (options.username) {
       this.setData({
         username: options.username
@@ -19,6 +22,9 @@ Page({
   },
 
   onShow: function () {
+    wx.hideHomeButton({
+      success: function() {},
+    })
     if (this.data.needRefresh) {
       this.initData()
       this.data.needRefresh = false
@@ -207,20 +213,22 @@ Page({
   },
 
   data: {
-    list: [{
-      // 设备名
-      device_name: "机器一号",
-      // 设备系列号
-      chip_id: "1201230",
-      // 型号
-      device_model_number: "蓝鸥1号",
-      // 位置
-      device_location: "蓝鸥4楼",
-      // 是否有故障，需要保养
-      fault: "",
-      // 是否在线
-      online_status: "offline"
-    }],
+    list: [
+      //   {
+      //   // 设备名
+      //   device_name: "机器一号",
+      //   // 设备系列号
+      //   chip_id: "1201230",
+      //   // 型号
+      //   device_model_number: "蓝鸥1号",
+      //   // 位置
+      //   device_location: "蓝鸥4楼",
+      //   // 是否有故障，需要保养
+      //   fault: "",
+      //   // 是否在线
+      //   online_status: "offline"
+      // }
+    ],
     // 操作的类型0-非重命名状态；1-状态；重名之后需要重置
     handleType: 0,
     // 重命名弹窗

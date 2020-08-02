@@ -1,16 +1,19 @@
 <!--index.wxml-->
 <view>
 	<image src="../../image/home_bg.jpg" class="background" mode="aspectFill"></image>
-	<view class="userinfo">
-		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+	<!-- <view class="userinfo">
+		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
 		<block wx:else>
 			<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
 			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
 		</block>
-	</view>
+	</view> -->
 	<view class="usermotto">
 		<!-- <text class="user-motto">{{motto}}</text> -->
-		<button bindtap="clickMe">设备列表</button>
-		<button bindtap="bindPhone">账号绑定</button>
+		<!-- <button bindtap="clickMe">设备列表</button> -->
+		<!-- <button bindtap="bindPhone">账号绑定</button> -->
+		<view class="set_button" bindtap="wxGetUserInfo" hidden='{{!showPermissions}}'>
+			<text>授权</text>
+		</view>
 	</view>
 </view>

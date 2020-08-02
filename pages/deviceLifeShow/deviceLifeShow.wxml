@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+	<view class="firstView">
+		<view class="first_top">已滤进水量</view>
+		<ec-canvas id="first_chart" canvas-id="first-pie" ec="{{ f_ec }}">
+		</ec-canvas>
+		<view class="first_bot">{{flu_total}}</view>
+	</view>
+	<view class="secondView">
+		<view class="second_top">已使用时间</view>
+		<ec-canvas id="second_chart" canvas-id="second-pie" ec="{{ s_ec }}"></ec-canvas>
+		<view class="second_bot">{{time_total}}</view>
+	</view>
+</view>

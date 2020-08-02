@@ -37,7 +37,7 @@
 			<view class="fouth-row">
 				<view class="image-parent1">
 					<image class="image" src="../../image/hexagon_blue.png" bindtap="click_6"></image>
-					<text class="child" bindtap="click_6">精密滤芯</text>
+					<text class="child" bindtap="click_6">UV灯</text>
 				</view>
 			</view>
 		</view>

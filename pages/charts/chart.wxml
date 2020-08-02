@@ -1,19 +1,21 @@
 <!-- chart.wxml -->
-<view class="container">
-	<view class="piecontainer">
-		<ec-canvas class="echart_chartpie" id="mychart-dom-pie-0" canvas-id="mychart-pie-0" ec="{{ ec_pie_0 }}" bind:init="echartInit"></ec-canvas>
-		<view class="bpm2">
-			<view class="bpm1">
-				<view>80</view>
-			</view>
-			<text class="pietitle">ppm</text>
+<page>
+	<view class="container">
+		<view class="piecontainer">
+			<ec-canvas class="ec-canvas" id="mychart-dom-pie-0" canvas-id="mychart-pie-0" ec="{{ ec_pie_0 }}" bind:init="echartInit"></ec-canvas>
+			<!-- <view class="bpm2">
+				<view class="bpm1">
+					<view>80</view>
+				</view>
+				<text class="pietitle">ppm</text>
+			</view> -->
 		</view>
-	</view>
-	<view class="echart_chartline">
-		<ec-canvas ec="{{ ec_line }}"></ec-canvas>
-	</view>
-	<text class="texttip">
+		<view class="echart_chartline">
+			<ec-canvas class="ec-line" ec="{{ ec_line }}"></ec-canvas>
+		</view>
+		<text class="texttip">
   何为TDS?
   总溶解固体，又称溶解性固体总量，指水中全部溶质的总量，包括无机物和有机物的含量。
   </text>
-</view>
+	</view>
+</page>

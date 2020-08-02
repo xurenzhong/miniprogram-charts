@@ -4,7 +4,7 @@ const app = getApp();
 /// 折线图
 function getOption(xData, data_cur, data_his) {
   const option = {
-    backgroundColor: "#142756",
+    backgroundColor: "#09356F",
     color: ["#ffffff", "#ffffff", "#ffffff", "#ffffff"],
     title: {
       textStyle: {
@@ -98,61 +98,35 @@ function getOption(xData, data_cur, data_his) {
 function getPieOption(value, data_cur, data_his) {
   const option = {
     series: [{
-      type: 'pie',//指定类型为饼状图
-      clockWise: true,
-      radius: ['70%', '75%'],//指定半径，注意不建议直接指定px，不利于自适应。
-      itemStyle: {
+      name: '访问来源',
+      type: 'pie',
+      radius: ['75%', '97%'],
+      animationType: 'scale',
+      silent: true,
+      startAngle: 300,
+      clockWise:false,　　　　　　//默认逆时针
+      labelLine: {
         normal: {
-          label: {
-            show: false
-          },
-          labelLine: {
-            show: false
-          }
+          show: false
         }
       },
-      hoverAnimation: true,
+      label: {
+        normal: {
+          show: true,
+          position: 'center',
+          color: '#ffffff',
+          fontSize: 12,
+          formatter: '80\nppm'
+        }
+      },
       data: [{
-        value: value,
-        name: 'completed',
-        itemStyle: {
-          normal: {
-            borderWidth: 5,
-            borderColor: {
-              colorStops: [{
-                offset: 0,
-                color: '#F13577' // 0% 处的颜色
-              }, {
-                offset: 1,
-                color: '#6076E1' // 100% 处的颜色
-              }]
-            },
-
-            label: {
-              show: true
-            },
-            labelLine: {
-              show: true
-            }
-          }
+          value: 10
+        },
+        {
+          value: 2
         }
-      }, {
-        name: 'gap',
-        value: 100 - value,
-        itemStyle: {
-          normal: {
-            label: {
-              show: false
-            },
-            labelLine: {
-              show: false
-            },
-            color: 'rgba(0, 0, 0, 0)',
-            borderColor: 'rgba(0, 0, 0, 0)',
-            borderWidth: 0
-          }
-        }
-      }]
+      ],
+      color: ["#162443", "#09356F"]
     }]
   };
   return option;
@@ -165,8 +139,10 @@ Page({
   onShareAppMessage: res => {
     return {}
   },
-  onLoad: function () {
-
+  onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: options.title,
+    })
   },
 
   data: {

@@ -1,19 +1,31 @@
 <page>
 	<view class="devicecontainer">
 		<view class="remind">
-			<view class="remindbg">
+			<view class="remindbg" hidden='{{hideMaintenance}}'>
 				<view class="remindcontent" bindtap="waterWarning">
 					<text class="remindtext">保养提醒</text>
 				</view>
 			</view>
-			<view class="remindbg">
+			<view class="remindbg" hidden='{{hideErrorWarn}}'>
 				<view class="remindcontent" bindtap="waterError">
 					<text class="remindtext">故障提醒</text>
 				</view>
 			</view>
 		</view>
+		<view class="tempbg">
+			<image src="../../image/tem_icon.png" class="temp_image"></image>
+			<view class="temp_text">
+				<text class="temp_content">{{temp}}</text>
+			</view>
+		</view>
 		<view class="device">
-			<image class="water_state" src="../../image/water_middle.png"></image>
+			<view class="water_levelbg">
+				<text class="water_text">{{water_content}}</text>
+			</view>
+			<view class="water_level">
+				<image class="water_state" src='{{water_state}}'></image>
+				<text class="water_text">水位</text>
+			</view>
 			<image class="deviceimagel" src="../../image/500_s_l.png"></image>
 			<image class="deviceimager" src="../../image/500_s_r.png"></image>
 		</view>

@@ -1,0 +1,109 @@
+page {
+  height: 100%;
+  background-color: rgba(9, 53, 111, 1);
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.firstView {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+  align-items: center;
+}
+
+.secondView {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+  align-items: center;
+}
+
+.first_bot {
+  color: rgba(70, 216, 135, 1);
+  text-align: center;
+  font-size: 12px;
+}
+
+.second_bot {
+  color: rgba(24, 147, 193, 1);
+  text-align: center;
+  font-size: 12px;
+}
+
+.first_top {
+  color: rgba(70, 216, 135, 1);
+  font-size: 14px;
+  text-align: center;
+}
+
+.second_top {
+  color: rgba(24, 147, 193, 1);
+  font-size: 14px;
+  text-align: center;
+}
+
+ec-canvas {
+  width: 160px;
+  height: 160px;
+  border: 1px solid white;
+  border-radius: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.bgView {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.bigCircle{
+  width: 420rpx;
+  height: 420rpx;
+  border-radius: 50%;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  background-color: #ddd;
+}
+.littleCircle{
+  width: 356rpx;
+  height: 356rpx;
+  border-radius: 50%;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  background-color: #eee;
+}
+.canvas{
+  width: 420rpx;
+  height: 420rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto auto;
+  z-index: 99;
+}

@@ -10,7 +10,9 @@
     "pages/bindPhone/bindPhone",
     "pages/deviceLifes/deviceLifes",
     "pages/waterWarning/waterWarning",
-    "pages/waterError/waterError"
+    "pages/waterError/waterError",
+    "pages/deviceLifeShow/deviceLifeShow",
+    "pages/canvasDemo/canvasDemo"
   ],
   "subpackages": [],
   "window": {
