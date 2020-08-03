@@ -1,13 +1,13 @@
 <page>
 	<view class="devicecontainer">
 		<view class="remind">
-			<view class="remindbg" hidden='{{hideMaintenance}}'>
-				<view class="remindcontent" bindtap="waterWarning">
+			<view class='{{hideMaintenance ? "remindbg_hide" : "remindbg"}}'>
+				<view class="warncontent" bindtap="waterWarning" hidden='{{hideMaintenance}}'>
 					<text class="remindtext">保养提醒</text>
 				</view>
 			</view>
-			<view class="remindbg" hidden='{{hideErrorWarn}}'>
-				<view class="remindcontent" bindtap="waterError">
+			<view class='{{hideErrorWarn ? "remindbg_hide" : "remindbg"}}'>
+				<view class="remindcontent" bindtap="waterError" hidden='{{hideErrorWarn}}'>
 					<text class="remindtext">故障提醒</text>
 				</view>
 			</view>

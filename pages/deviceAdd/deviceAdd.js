@@ -61,10 +61,23 @@ Page({
 
   // 绑定
   bindDevice: function () {
+    if (!this.data.showOk) {
+      return
+    }
     if (this.data.user.length == 0 || this.data.telnum.length == 0 || this.data.user_work_place.length == 0 || this.data.user_job.length == 0) {
       wx.showToast({
-        title: '缺少信息',
+        title: '缺少信息！',
         icon: "none"
+      })
+    } else if (this.data.telnum.length != 11) {
+      wx.showToast({
+        title: '手机号位数不符！',
+        icon: 'none'
+      })
+    } else if (this.data.telnum !== this.data.username) {
+      wx.showToast({
+        title: '手机号与注册手机不符！',
+        icon: 'none'
       })
     } else {
       this.addDevice()
@@ -80,18 +93,30 @@ Page({
 
   setNameValue: function (e) {
     this.data.user = e.detail.value
+    this.checkAllInput()
   },
 
   setTelValue: function (e) {
     this.data.telnum = e.detail.value
+    this.checkAllInput()
   },
 
   setJobValue: function (e) {
     this.data.user_job = e.detail.value
+    this.checkAllInput()
   },
 
   setWorkValue: function (e) {
     this.data.user_work_place = e.detail.value
+    this.checkAllInput()
+  },
+
+  checkAllInput: function(){
+    if (this.data.user.length > 0 && this.data.telnum.length > 0 && this.data.user_work_place.length > 0 && this.data.user_job.length > 0) {
+      this.setData({showOk: true})
+    }else{
+      this.setData({showOk: false})
+    }
   },
 
   data: {
@@ -109,6 +134,8 @@ Page({
     // 手机号
     username: "",
     // 设备名称默认
-    device_name: "蓝鸥净水设备"
+    device_name: "蓝鸥净水设备",
+    // showOkStatu
+    showOk: false
   }
 })

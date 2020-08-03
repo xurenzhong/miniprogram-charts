@@ -84,7 +84,7 @@ Page({
         // 温度
         var tempStr_16 = work_s.slice(2, 6)
         var tempStr_10 = parseInt(tempStr_16.toString(16), 16) * 0.1
-        that.setData({temp:'温度：' + tempStr_10 + '℃'})
+        that.setData({temp:'温度：' + tempStr_10.toFixed(1) + '℃'})
 
         // 故障提示
         var errorStr_16 = work_s.slice(6, 10)
@@ -108,7 +108,7 @@ Page({
         var waterStr_16 = work_s.slice(14, 16)
         var water_state = waterStr_16[1]
         if (water_state == 0) {
-          that.setData({water_state: '../../image/water_zero.png', water_content: '空'})
+          that.setData({water_state: '../../image/water_zero.png', water_content: '低'})
         }else if (water_state == 1) {
           that.setData({water_state: '../../image/water_low.png', water_content: '低'})
         }else if (water_state == 2) {
@@ -116,7 +116,7 @@ Page({
         }else if (water_state == 3) {
           that.setData({water_state: '../../image/water_high.png', water_content: '高'})
         }else if (water_state == 4) {
-          that.setData({water_state: '../../image/water_high.png', water_content: '满'})
+          that.setData({water_state: '../../image/water_high.png', water_content: '高'})
         }
       }
     }, function (err) {

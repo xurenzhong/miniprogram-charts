@@ -1,5 +1,5 @@
 <image src="../../image/device_bg.png" class="background" mode="aspectFill"></image>
-<scroll-view class="scrollview" scroll-y>
+<scroll-view class="scrollview" scroll-y="true">
 	<view class="list" wx:for="{{list}}" wx:key="index" bindtap="catchTap" data-index="{{index}}">
 		<view class="title">
 			<view></view>

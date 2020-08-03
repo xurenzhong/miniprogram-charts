@@ -4,40 +4,40 @@
 		<view>
       <view class="zero-row">
         <view class="image-parent1">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_0"></image>
+					<image class="image" src='{{image_array[0]}}' bindtap="click_0"></image>
 					<text class="child" bindtap="click_0">石英砂</text>
 				</view>
       </view>
 			<view class="first-row">
 				<view class="image-parent1">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_1"></image>
+					<image class="image" src='{{image_array[1]}}' bindtap="click_1"></image>
 					<text class="child" bindtap="click_1">活性炭</text>
 				</view>
 				<view class="image-parent2">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_2"></image>
+					<image class="image" src='{{image_array[2]}}' bindtap="click_2"></image>
 					<text class="child" bindtap="click_2">软化树脂</text>
 				</view>
 			</view>
 			<view class="second-row">
 				<view class="image-parent1">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_3"></image>
+					<image class="image" src='{{image_array[3]}}' bindtap="click_3"></image>
 					<text class="child" bindtap="click_3">再生盐</text>
 				</view>
 			</view>
 			<view class="third-row">
 				<view class="image-parent1">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_4"></image>
+					<image class="image" src='{{image_array[4]}}' bindtap="click_4"></image>
 					<text class="child" bindtap="click_4">精密滤芯</text>
 				</view>
 				<view class="image-parent2">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_5"></image>
+					<image class="image" src='{{image_array[5]}}' bindtap="click_5"></image>
 					<text class="child" bindtap="click_5">RO膜</text>
 				</view>
 			</view>
 			<view class="fouth-row">
 				<view class="image-parent1">
-					<image class="image" src="../../image/hexagon_gray.png" bindtap="click_6"></image>
-					<text class="child" bindtap="click_6">精密滤芯</text>
+					<image class="image" src='{{image_array[6]}}' bindtap="click_6"></image>
+					<text class="child" bindtap="click_6">UV</text>
 				</view>
 			</view>
 		</view>

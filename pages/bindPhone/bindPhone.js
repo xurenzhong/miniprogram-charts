@@ -216,9 +216,22 @@ Page({
           wx.showToast({
             title: '绑定手机成功',
           })
+          wx.redirectTo({
+            url: '../devices/devices?username=' + username,
+          })
+        } else {
+          wx.showToast({
+            title: '绑定手机失败,请重试',
+            duration: 3000,
+            icon: 'none'
+          })
         }
       }, function (err) {
         console.log(err)
+        wx.showToast({
+          title: '网络错误',
+          icon: 'none'
+        })
       })
     }
   }

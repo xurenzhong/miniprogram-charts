@@ -15,7 +15,7 @@
 				<input class="inputcontent" placeholder="姓名" bindinput="setNameValue"></input>
 			</view>
 			<view class="input">
-				<input class="inputcontent" placeholder="手机号码" bindinput="setTelValue"></input>
+				<input class="inputcontent" placeholder="手机号码" bindinput="setTelValue" type="number"></input>
 			</view>
 			<view class="input">
 				<input class="inputcontent" placeholder="工作岗位" bindinput="setJobValue"></input>
@@ -25,7 +25,7 @@
 			</view>
 		</view>
 		<view class="botcontent">
-			<view class="bindcontent" bindtap="bindDevice">
+			<view class='{{showOk ? "bindcontent_ok" : "bindcontent"}}' bindtap="bindDevice">
 				<text class="bind">绑定</text>
 			</view>
 			<view class="removebindcontent" bindtap="cancelBind">

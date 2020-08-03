@@ -19,16 +19,27 @@ page {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: center; */
   align-content: space-around;
 
 }
 
 .remindbg {
   background-color: rgba(216, 218, 219, 1);
-  height: 54px;
+  height: 62px;
   width: 148px;
-  border-radius: 27px;
+  border-radius: 31px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.remindbg_hide {
+  background-color: white;
+  height: 62px;
+  width: 148px;
+  border-radius: 31px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -37,8 +48,18 @@ page {
 
 .remindcontent {
   background-color: rgba(226, 53, 73, 1);
-  border-radius: 19px;
-  height: 38px;
+  border-radius: 22px;
+  height: 44px;
+  width: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.warncontent {
+  background-color: rgba(241, 156, 68, 1);
+  border-radius: 22px;
+  height: 44px;
   width: 128px;
   display: flex;
   justify-content: center;
@@ -91,6 +112,7 @@ page {
 .water_level {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .water_state {

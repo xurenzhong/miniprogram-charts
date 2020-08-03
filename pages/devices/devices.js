@@ -18,17 +18,28 @@ Page({
         username: options.username
       })
       this.initData()
-    }
+    } 
   },
 
   onShow: function () {
+    let that = this
     wx.hideHomeButton({
       success: function() {},
     })
-    if (this.data.needRefresh) {
-      this.initData()
-      this.data.needRefresh = false
+    if (that.data.needRefresh) {
+      that.initData()
+      that.data.needRefresh = false
     }
+    // 定时任务5分钟刷新
+    that.data.timer = setInterval(() => {
+      that.initData()
+    }, 30000);
+  },
+
+  // 离开返回，都需要重新刷新
+  onHide: function (){
+    this.data.needRefresh = true
+    clearInterval(this.data.timer)
   },
 
   // 获取设置列表
@@ -41,6 +52,12 @@ Page({
     }
     http.getRequest(app.globalData.root + "/programs/userDeviceListServlet", params, function (res) {
       console.log("成功：" + res)
+      // 如果没有在线状态，默认为在线
+      res.forEach(element => {
+        if (element.online_status === '') {
+          element.online_status = 'online'
+        }
+      });
       if (res !== "faild") {
         that.setData({
           list: res
@@ -244,6 +261,8 @@ Page({
     // 当前被操作的设备
     device: null,
     // 是否需要刷新
-    needRefresh: false
+    needRefresh: false,
+    // 定时任务
+    timer: null
   }
 })

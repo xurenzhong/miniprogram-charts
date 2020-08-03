@@ -78,6 +78,17 @@ page {
   align-items: center;
 }
 
+.bindcontent_ok {
+  background-color: rgba(27, 81, 198, 0.6);
+  border-radius: 17px;
+  width: 80%;
+  height: 34px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .removebindcontent {
   width: 80%;
   height: 34px;
