@@ -1,5 +1,7 @@
+
 <image src="../../image/device_bg.png" class="background" mode="aspectFill"></image>
-<scroll-view class="scrollview" style="height: 615px" scroll-y="true" upper-threshold="40" bindscrolltoupper="scrolltoupper">
+<view class="listbg">
+<!-- <scroll-view class="scrollview" style="height: 615px" scroll-y="true" upper-threshold="40" bindscrolltoupper="scrolltoupper"> -->
 	<view class="list" wx:for="{{list}}" wx:key="index" bindtap="catchTap" data-index="{{index}}">
 		<view class="title">
 			<view></view>
@@ -7,8 +9,8 @@
 				<text>{{item.device_name}}</text>
 				<image class="nameButton" src="../../image/edit.png" bindtap="rename"></image>
 			</view>
-			<view class="linebg">
-				<image class="markimage" src="../../image/jiebang.png" bindtap="removeDevice"></image>
+			<view class="linebg" bindtap="removeDevice">
+				<image class="markimage" src="../../image/jiebang.png"></image>
 				<view class="{{item.online_status}}"></view>
 				<text class="marktext">{{item.online_status === "offline" ? "离线" : "在线"}}</text>
 			</view>
@@ -26,7 +28,8 @@
 			<text>{{item.chip_id}}</text>
 		</view>
 	</view>
-</scroll-view>
+	</view>
+<!-- </scroll-view> -->
 <view class="scanview" bindtap="scanDevice">
 	<image class="scanimage" src="../../image/scan_qrcode.png"></image>
 </view>

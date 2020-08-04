@@ -1,3 +1,14 @@
+page {
+  height: 100%;
+}
+
+.listbg {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 55px;
+}
+
 .list {
   background-color: rgba(27, 81, 198, 0.6);
   height: 135px;
@@ -36,10 +47,10 @@
 }
 
 .nameButton {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   margin-left: 12px;
-  margin-top: 4px;
+  /* margin-top: 4px; */
 }
 
 .buttonImage {
@@ -77,15 +88,16 @@
 }
 
 .markimage {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
 }
 
 .content {
   color: white;
   font-size: 12px;
   margin-top: 8px;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   /* justify-content: center; */

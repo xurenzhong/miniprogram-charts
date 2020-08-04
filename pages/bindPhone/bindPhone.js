@@ -221,7 +221,7 @@ Page({
             title: '绑定手机成功',
           })
           wx.redirectTo({
-            url: '../devices/devices?username=' + username,
+            url: '../../pages/devices/devices?username=' + username,
           })
         } else {
           wx.showToast({

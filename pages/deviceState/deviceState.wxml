@@ -1,4 +1,5 @@
 <page>
+	<image src="../../image/device_bg.png" class="background" mode="aspectFill"></image>
 	<view class="devicecontainer">
 		<view class="remind">
 			<view class='{{hideMaintenance ? "remindbg_hide" : "remindbg"}}'>
@@ -12,7 +13,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="tempbg">
+		<view class="tempbg" hidden='{{is_250_S}}'>
 			<image src="../../image/tem_icon.png" class="temp_image"></image>
 			<view class="temp_text">
 				<text class="temp_content">{{temp}}</text>
@@ -26,8 +27,13 @@
 				<image class="water_state" src='{{water_state}}'></image>
 				<text class="water_text">水位</text>
 			</view>
-			<image class="deviceimagel" src="../../image/500_s_l.png"></image>
-			<image class="deviceimager" src="../../image/500_s_r.png"></image>
+			<image class='{{is_250_S ? "LOSRO-250-S" : "deviceimagel"}}' src='{{type_image}}' mode="heightFix"></image>
+			<view class="tempbg" hidden='{{!is_250_S}}'>
+				<image src="../../image/tem_icon.png" class="temp_image"></image>
+				<view class="temp_text">
+					<text class="temp_content">{{temp}}</text>
+				</view>
+			</view>
 		</view>
 		<view class="remind">
 			<view class="remindbg">

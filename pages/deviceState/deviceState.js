@@ -11,7 +11,10 @@ Page({
     // 读取上级传递信息
     var chip_id = options.chip_id
     var fault = options.fault
-    this.setData({chip_id: chip_id, fault: fault})
+    var type = options.type
+    var type_image = '../../image/' + type + '.png'
+    console.log('当前设备型号:' + type)
+    this.setData({chip_id: chip_id, fault: fault, type: type, type_image: type_image, is_250_S: type === 'LOSRO-250-S'})
     // 拿取设备数据的详情
     this.initData(chip_id)
   },
@@ -178,6 +181,12 @@ Page({
     // 水位
     water_state: '../../image/water_middle.png',
     // 水位中文
-    water_content: '中'
+    water_content: '中',
+    // 型号 LOSRO-250-S LOSRO-500-S LOSRO-1000-S LOSRO-2000-S
+    type: '',
+    // 图片
+    type_image: '',
+    // is LOSRO-250-S
+    is_250_S: true
   }
 })

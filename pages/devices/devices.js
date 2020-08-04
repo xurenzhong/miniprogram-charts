@@ -10,22 +10,23 @@ Page({
 
   onLoad: function (options) {
     console.log(options)
-    wx.hideHomeButton({
-      success: (res) => {},
-    })
+    
     if (options.username) {
       this.setData({
         username: options.username
       })
       this.initData()
-    } 
+    }
   },
 
   onShow: function () {
     let that = this
-    wx.hideHomeButton({
-      success: function() {},
-    })
+    if(wx.canIUse('hideHomeButton')) {
+      wx.hideHomeButton({
+        success: (res) => {},
+      })
+    }
+    
     if (that.data.needRefresh) {
       that.initData()
       that.data.needRefresh = false
@@ -37,7 +38,7 @@ Page({
   },
 
   // 离开返回，都需要重新刷新
-  onHide: function (){
+  onHide: function () {
     this.data.needRefresh = true
     clearInterval(this.data.timer)
   },
@@ -46,21 +47,23 @@ Page({
   initData: function () {
     let that = this
     var params = {
-      username: this.data.username
+      username: that.data.username
     }
     http.getRequest(app.globalData.root + "/programs/userDeviceListServlet", params, function (res) {
       console.log("成功：" + res)
-      // 如果没有在线状态，默认为在线
-      res.forEach(element => {
-        if (element.online_status === '') {
-          element.online_status = 'online'
-        }
-      });
       if (res !== "faild") {
+        // 如果没有在线状态，默认为在线
+        res.forEach(element => {
+          if (element.online_status === '') {
+            element.online_status = 'online'
+          }
+        });
+        // res.push(res[0])
         that.setData({
           list: res,
           pullRefresh: true
         })
+
       } else {
         that.setData({
           list: [],
@@ -71,9 +74,17 @@ Page({
           icon: 'none'
         })
       }
+      wx.stopPullDownRefresh({
+        success: (res) => {},
+      })
     }, function (err) {
       console.log(err)
-      that.setData({pullRefresh: true})
+      that.setData({
+        pullRefresh: true
+      })
+      wx.stopPullDownRefresh({
+        success: (res) => {},
+      })
     })
   },
 
@@ -134,9 +145,10 @@ Page({
     } else {
       var index = e.currentTarget.dataset.index
       var chip_id = that.data.list[index].chip_id
+      var type = that.data.list[index].device_model_number
       console.log("点击了第" + index + "个设备：" + chip_id)
       wx.navigateTo({
-        url: '../../pages/deviceState/deviceState?chip_id=' + chip_id,
+        url: '../../pages/deviceState/deviceState?chip_id=' + chip_id + '&type=' + type,
       })
     }
   },
@@ -239,15 +251,18 @@ Page({
     }
   },
 
+  // 触发了刷新,不使用scroll-view
   onPullDownRefresh: function () {
-    console.log("父类触发")
+    console.log("触发了刷新")
+    this.initData()
   },
 
   refresherrefresh: function () {
     console.log("触发了刷新")
+    this.initData()
   },
 
-  scroll: function (e){
+  scroll: function (e) {
     console.log(e.detail.scrollTop)
   },
 

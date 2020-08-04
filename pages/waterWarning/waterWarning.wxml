@@ -1,5 +1,5 @@
 <page>
-	<!-- <image src="../../image/device_bg.png" class="background" mode="aspectFill"></image> -->
+	<image src="../../image/device_bg.png" class="background" mode="aspectFill"></image>
 	<view class="container">
 		<view>
       <view class="zero-row">
