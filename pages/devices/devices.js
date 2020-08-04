@@ -33,7 +33,7 @@ Page({
     // 定时任务5分钟刷新
     that.data.timer = setInterval(() => {
       that.initData()
-    }, 30000);
+    }, 300000);
   },
 
   // 离开返回，都需要重新刷新
@@ -47,8 +47,6 @@ Page({
     let that = this
     var params = {
       username: this.data.username
-      // 测试
-      // username: "test"
     }
     http.getRequest(app.globalData.root + "/programs/userDeviceListServlet", params, function (res) {
       console.log("成功：" + res)
@@ -60,11 +58,13 @@ Page({
       });
       if (res !== "faild") {
         that.setData({
-          list: res
+          list: res,
+          pullRefresh: true
         })
       } else {
         that.setData({
-          list: []
+          list: [],
+          pullRefresh: true
         })
         wx.showToast({
           title: '获取失败或者没有设备',
@@ -73,6 +73,7 @@ Page({
       }
     }, function (err) {
       console.log(err)
+      that.setData({pullRefresh: true})
     })
   },
 
@@ -229,6 +230,27 @@ Page({
     })
   },
 
+  // 头部滚动
+  scrolltoupper: function () {
+    console.log("触发滚动")
+    if (this.data.pullRefresh) {
+      this.data.pullRefresh = false
+      this.initData()
+    }
+  },
+
+  onPullDownRefresh: function () {
+    console.log("父类触发")
+  },
+
+  refresherrefresh: function () {
+    console.log("触发了刷新")
+  },
+
+  scroll: function (e){
+    console.log(e.detail.scrollTop)
+  },
+
   data: {
     list: [
       //   {
@@ -263,6 +285,8 @@ Page({
     // 是否需要刷新
     needRefresh: false,
     // 定时任务
-    timer: null
+    timer: null,
+    // refreh
+    pullRefresh: true,
   }
 })

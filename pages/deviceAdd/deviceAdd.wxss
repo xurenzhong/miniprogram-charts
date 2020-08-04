@@ -79,7 +79,7 @@ page {
 }
 
 .bindcontent_ok {
-  background-color: rgba(27, 81, 198, 0.6);
+  background-color: rgba(27, 81, 198, 1);
   border-radius: 17px;
   width: 80%;
   height: 34px;

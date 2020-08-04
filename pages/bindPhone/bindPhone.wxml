@@ -12,7 +12,7 @@
 				<input name="phoneCode" placeholder="请输入验证码" class='number' placeholder-style='color:#bbb' bindinput="yanLoveInput" />
 				<view bindtap='yanLoveBtn' class='getNum'>{{getText2}}</view>
 			</view>
-			<button formType="submit" class='submit'>绑定</button>
+			<button formType="submit" class='{{showOk ? "submit_ok" : "submit"}}'>绑定</button>
 		</form>
 	</view>
 </page>

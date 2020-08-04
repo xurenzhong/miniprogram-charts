@@ -59,3 +59,13 @@ page {
   color: #fff;
   font-size: 32rpx;
 }
+
+.submit_ok {
+  width: 670rpx;
+  height: 80rpx;
+  background: rgba(27, 81, 198, 1);
+  border-radius: 40rpx;
+  margin-top: 80rpx;
+  color: #fff;
+  font-size: 32rpx;
+}

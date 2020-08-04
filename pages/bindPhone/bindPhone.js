@@ -19,6 +19,7 @@ Page({
     getText2: '获取验证码',
     openid: '',
     realCode: '',
+    showOk: false
   },
 
   /**
@@ -123,6 +124,7 @@ Page({
       // if (yanLove == huoLove) {
       that.setData({
         zhengLove: true,
+        showOk: true,
       })
       // } else {
 
@@ -132,6 +134,8 @@ Page({
       //   success: function (res) { }
       // })
       // }
+    }else{
+      that.setData({showOk: false})
     }
 
   },
